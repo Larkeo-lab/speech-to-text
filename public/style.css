@@ -1,0 +1,213 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --border: #334155;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: -0.025em;
+}
+
+h1 span {
+    color: var(--primary);
+    font-size: 1.5rem;
+    display: block;
+    font-weight: 300;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+}
+
+.upload-section,
+.record-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 480px) {
+    .upload-section,
+    .record-section {
+        flex-direction: row;
+    }
+    
+    .upload-section button, 
+    .record-section button {
+        flex: 1;
+    }
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--text-muted);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border);
+}
+
+.divider span {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Custom File Upload */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.2s;
+    color: var(--text-muted);
+    flex: 2;
+}
+
+.custom-file-upload:hover {
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: var(--border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-record {
+    background-color: var(--success);
+}
+
+.btn-record:hover {
+    background-color: #16a34a;
+}
+
+.btn-stop {
+    background-color: var(--danger);
+}
+
+.btn-stop:hover {
+    background-color: #dc2626;
+}
+
+.status {
+    margin: 1.5rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    min-height: 1.25rem;
+}
+
+.result-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 1.25rem;
+    background-color: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    resize: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: var(--primary);
+}
+
+.btn-copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.btn-copy:hover {
+    background-color: var(--border);
+}

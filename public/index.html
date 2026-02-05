@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart ODSC - Lao Speech to Text</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Smart ODSC <br /><span>Lao Speech to Text</span></h1>
+
+      <div class="card">
+        <div class="upload-section">
+          <label for="audioInput" class="custom-file-upload">
+            Choose Audio File
+          </label>
+          <input type="file" id="audioInput" accept="audio/*" />
+          <button id="transcribeBtn">Transcribe File</button>
+        </div>
+
+        <div class="divider"><span>OR</span></div>
+
+        <div class="record-section">
+          <button id="recordBtn" class="btn-record">Start Recording</button>
+          <button id="stopBtn" class="btn-stop" disabled>Stop Recording</button>
+        </div>
+      </div>
+
+      <div id="status" class="status">Ready</div>
+
+      <div class="result-section">
+        <h2>Transcription Result</h2>
+        <div class="textarea-wrapper">
+          <textarea
+            id="transcriptionOutput"
+            readonly
+            placeholder="Transcription will appear here..."
+          ></textarea>
+          <button id="copyBtn" class="btn-copy">Copy</button>
+        </div>
+      </div>
+    </div>
+    <script src="client.js"></script>
+  </body>
+</html>

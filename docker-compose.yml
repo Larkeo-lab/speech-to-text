@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    env_file:
+      - .env
+    command: pnpm start
+    networks:
+      - smart-odsc-users-network
+    container_name: smart-odsc-users
+networks:
+  smart-odsc-users-network:
+    name: smart-odsc-users-network
+    driver: bridge
